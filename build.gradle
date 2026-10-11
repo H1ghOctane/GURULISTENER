@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    aspectj
+}
+
+dependencies {
+    testImplementation 'com.codeborne:selenide:7.0.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testImplementation 'io.qameta.allure:allure-selenide:2.25.0'
+    testImplementation 'io.qameta.allure:allure-junit5:2.25.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    aspectj 'org.aspectj:aspectjweaver:1.9.22'
+}
+
+tasks.test {
+    useJUnitPlatform()
+    jvmArgs "-javaagent:${configurations.aspectj.singleFile}"
+}
