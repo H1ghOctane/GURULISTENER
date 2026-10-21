@@ -12,15 +12,15 @@ public class IssueTitleLambdaStepsTest extends BaseTest {
     @Test
     void checkIssueTitle() {
         Allure.step("Открыть список Issues репозитория", () -> {
-            open("/H1ghtOctane/GURULISTENER/issues");
+            open("/H1ghOctane/GURULISTENER/issues");
         });
 
         Allure.step("Кликнуть по ссылке на Issue #1", () -> {
             $("a[href$='/issues/1']").click();
         });
 
-        Allure.step("Проверить, что заголовок Issue равен 'Issue'", () -> {
-            $("h1 bdi").shouldHave(text("Issue"));
+        Allure.step("Проверить, что заголовок Issue равен 'issue for test'", () -> {
+            $("h1 bdi").shouldHave(text("issue for test"));
         });
     }
 }

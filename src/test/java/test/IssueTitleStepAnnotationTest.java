@@ -18,7 +18,7 @@ public class IssueTitleStepAnnotationTest extends BaseTest {
 
     @Step("Открыть список Issues репозитория")
     void openIssuesPage() {
-        open("/H1ghtOctane/GURULISTENER/issues");
+        open("/H1ghOctane/GURULISTENER/issues");
     }
 
     @Step("Кликнуть по ссылке на Issue #1")
@@ -26,7 +26,7 @@ public class IssueTitleStepAnnotationTest extends BaseTest {
         $("a[href$='/issues/1']").click();
     }
 
-    @Step("Проверить, что название Issue равно '{expectedTitle}'")
+    @Step("Проверить, что название Issue равно '{issue for test}'")
     void verifyIssueTitle(String expectedTitle) {
         $("h1 bdi").shouldHave(text(expectedTitle));
     }
