@@ -35,6 +35,7 @@ bin/
 
 src/main/java/org/example/
 
+er.name
 chromedriver.log
 .chromedriver.log
 *.log
